@@ -1,0 +1,19 @@
+# Tab indentation for HTML files
+[*.html]
+indent_style = space
+indent_size = 2
+
+# Tab indentation for JS files
+[*.js]
+indent_style = space
+indent_size = 2
+
+# Tab indentation for JSON files
+[*.json]
+indent_style = space
+indent_size = 2
+
+# Tab indentation for JSX files
+[*.jsx]
+indent_style = space
+indent_size = 2

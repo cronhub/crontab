@@ -4,22 +4,23 @@ import cronstrue from "cronstrue";
 
 const InputWrapper = styled.input`
   padding: 0.5em;
-  color: #f3ebff;
+  color: white;
   border: none;
   border-radius: 3px;
   text-align: center;
-  font-size: 200%;
-  border-radius: 0.5em;
+  font-size: 130%;
   background-color: #382b5f;
 `;
 
 const HumanTextWrapper = styled.div`
   display: flex;
   padding: 10px;
+  margin-left: 20px;
   font-weight: bold;
   color: #382b5f;
-  font-size: 25px;
+  font-size: 22px;
   align-items: center;
+  font-family: monospace;
 `;
 
 const HumanText = styled.div``;
@@ -29,26 +30,30 @@ const Wrapper = styled.div`
   width: 100%;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   background: #fff;
   border: 1px solid #e9e4f7;
   border-radius: 4px;
-  box-shadow: 0px 0px 10px rgba(48,71,89,0.05);
+  box-shadow: 0px 0px 10px rgba(48, 71, 89, 0.05);
   margin: 0 0 1rem;
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
-  padding: 20px;
+  padding: 40px;
 `;
 
 class Input extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: "* 2 * * *" };
+    this.state = { value: "*/5 * * * *" };
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
     this.setState({ value: event.target.value });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    this._input.focus();
   }
 
   makeHuman(schedule) {
@@ -62,19 +67,21 @@ class Input extends React.Component {
 
   render() {
     const schedule = this.state.value;
+
     return (
       <Wrapper>
+        <InputWrapper
+          type="text"
+          value={this.state.value}
+          onChange={this.handleChange}
+          autoFocus
+          ref={c => (this._input = c)}
+        />
         <HumanTextWrapper>
           <HumanText>
             {this.makeHuman(schedule, { use24HourTimeFormat: true })}
           </HumanText>
         </HumanTextWrapper>
-        <InputWrapper
-          type="text"
-          value={this.state.value}
-          onChange={this.handleChange}
-        />
-        <span>minute hour day month day</span>
       </Wrapper>
     );
   }

@@ -1,8 +1,9 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import styled from "styled-components";
 import Input from "./components/Input";
+import Helper from "./components/Helper";
 
 const ContributeButton = styled.a`
   text-decoration: none;
@@ -29,7 +30,7 @@ const Nav = styled.nav`
   }
   a {
     text-decoration: none;
-    padding: 15px;
+    padding: 10px;
     display: inline-block;
     font-weight: 500;
     font-size: 16px;
@@ -50,7 +51,13 @@ const ValuePropContainer = styled.div`
   font-weight: bold;
   color: #382a5fa3;
   margin-top: 20px;
+  font-family: "Source Code Pro", monospace;
   margin-bottom: 40px;
+
+  a {
+    font-family: "Source Code Pro", monospace;
+    color: #382b5f;
+  }
 `;
 
 export const InnerContainer = styled.div`
@@ -63,38 +70,51 @@ export const InnerContainer = styled.div`
   max-width: 768px;
 `;
 
-const App = ({ children }) => {
+function App() {
   return (
-    <Container>
-      <Header>
-        <Nav>
-          <ul>
-            <li>
-              <a href="#">About</a>
-            </li>
-            <li>
-              <ContributeButton
-                target="_blank"
-                href="github.com"
-                rel="noopener noreferrer"
-                href="https://github.com/cronhub-app"
-              >
-                Contribute
-              </ContributeButton>
-            </li>
-          </ul>
-        </Nav>
-      </Header>
-      <InnerContainer>
-        <ValuePropContainer>Cron expression generator by <a href="https://cronhub.io?ref=crontab">Cronhub</a></ValuePropContainer>
-        <Input />
-      </InnerContainer>
-    </Container>
+    <Router>
+      <Container>
+        <Header>
+          <Nav>
+            <ul>
+              <li>
+                <ContributeButton
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://github.com/cronhub-app/crontab"
+                >
+                  Contribute
+                </ContributeButton>
+              </li>
+            </ul>
+          </Nav>
+        </Header>
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+      </Container>
+    </Router>
   );
-};
+}
 
-App.propTypes = {
-  children: PropTypes.node
-};
+function About() {
+  return (
+    <div>
+      <h2>About</h2>
+    </div>
+  );
+}
+
+function Home() {
+  return (
+    <InnerContainer>
+      <ValuePropContainer>
+        Cron expression generator by{" "}
+        <a href="https://cronhub.io?ref=crontab">Cronhub</a>
+      </ValuePropContainer>
+      <Input />
+      <Helper />
+    </InnerContainer>
+  );
+}
 
 export default App;

@@ -109,7 +109,9 @@ function Home() {
     <InnerContainer>
       <ValuePropContainer>
         Cron expression generator by{" "}
-        <a href="https://cronhub.io?ref=crontab">Cronhub</a>
+        <a href="https://cronhub.io?ref=crontab" rel="nofollow" title="">
+          Cronhub
+        </a>
       </ValuePropContainer>
       <Input />
       <Helper />

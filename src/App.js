@@ -20,13 +20,13 @@ const Header = styled.header`
   align-items: center;
   width: 100%;
   justify-content: flex-end;
-  padding: 10px 20px;
 `;
 
 const Nav = styled.nav`
   ul {
     list-style: none;
     display: flex;
+    margin-right: 30px;
   }
   a {
     text-decoration: none;

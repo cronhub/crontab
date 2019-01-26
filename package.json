@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "babel-loader": "^8.0.5",
     "cronstrue": "^1.60.0",
     "moment": "^2.23.0",
     "react": "^16.7.0",
@@ -33,7 +32,6 @@
     "@storybook/addon-actions": "^4.1.7",
     "@storybook/addon-links": "^4.1.7",
     "@storybook/react": "^4.1.7",
-    "prettier": "1.15.3",
-    "tailwindcss": "^0.7.3"
+    "prettier": "1.15.3"
   }
 }

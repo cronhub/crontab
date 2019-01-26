@@ -11,12 +11,15 @@ export const configureStore = () => {
   const sagaMiddleware = createSagaMiddleware();
 
   const history = createBrowserHistory();
-  const store = createStore(reducers(history), composeWithDevTools(
-    compose(
-      applyMiddleware(sagaMiddleware),
-      applyMiddleware(routerMiddleware(history))
+  const store = createStore(
+    reducers(history),
+    composeWithDevTools(
+      compose(
+        applyMiddleware(sagaMiddleware),
+        applyMiddleware(routerMiddleware(history))
+      )
     )
-  ) as any);
+  );
 
   sagaMiddleware.run(sagas);
 

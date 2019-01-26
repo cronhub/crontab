@@ -11,11 +11,11 @@ import { CronHumanDescription } from "../../../gateways";
 export function* CronExpressionSagas() {
   yield takeEvery(
     GET_HUMAN_READABLE_DESCRIPTION,
-    executeGetCronHumanExpressionInteractor
+    executeGetHumanReadableDescriptionInteractor
   );
 }
 
-function* executeGetCronHumanExpressionInteractor(
+function* executeGetHumanReadableDescriptionInteractor(
   action: GetHumanReadableDescriptionActionType
 ) {
   try {

@@ -68,6 +68,14 @@ const cronExpressions = [
   }
 ];
 
+const helpers = [
+  "minute (0-59)",
+  "hour (0 - 23)",
+  "day of the month (1 - 31)",
+  "month (1 - 12)",
+  "day of the week (0 - 6)"
+];
+
 class Input extends React.Component {
   render() {
     return (
@@ -88,11 +96,9 @@ class Input extends React.Component {
           </thead>
           <tbody>
             <tr>
-              <td>minute (0-59)</td>
-              <td>hour (0 - 23)</td>
-              <td>day of the month (1 - 31)</td>
-              <td>month (1 - 12)</td>
-              <td>day of the week (0 - 6)</td>
+              {helpers.map(helper => (
+                <td>{helper}</td>
+              ))}
             </tr>
           </tbody>
         </HelpTable>

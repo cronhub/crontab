@@ -63,8 +63,7 @@ export default class Input extends React.Component<null, InputState> {
 
   makeHuman(schedule: string) {
     try {
-      const humanSchedule = cronstrue.toString(schedule);
-      return humanSchedule;
+      return cronstrue.toString(schedule);
     } catch (e) {
       console.log(e);
     }

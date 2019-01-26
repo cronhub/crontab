@@ -2,8 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import styled from "styled-components";
-import Input from "./components/Input";
-import Helper from "./components/Helper";
+import { Input, Helper } from "./components";
 
 const ContributeButton = styled.a`
   text-decoration: none;

@@ -41,22 +41,27 @@ const Wrapper = styled.div`
   padding: 40px;
 `;
 
-class Input extends React.Component {
-  constructor(props) {
+interface InputState {
+  value: string;
+}
+
+export default class Input extends React.Component<null, InputState> {
+  _input: any;
+  constructor(props: any) {
     super(props);
     this.state = { value: "*/5 * * * *" };
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(event) {
+  handleChange(event: any) {
     this.setState({ value: event.target.value });
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps: any, prevState: any) {
     this._input.focus();
   }
 
-  makeHuman(schedule) {
+  makeHuman(schedule: string) {
     try {
       const humanSchedule = cronstrue.toString(schedule);
       return humanSchedule;
@@ -66,25 +71,21 @@ class Input extends React.Component {
   }
 
   render() {
-    const schedule = this.state.value;
+    const { value: schedule } = this.state;
 
     return (
       <Wrapper>
         <InputWrapper
           type="text"
-          value={this.state.value}
+          value={schedule}
           onChange={this.handleChange}
           autoFocus
           ref={c => (this._input = c)}
         />
         <HumanTextWrapper>
-          <HumanText>
-            {this.makeHuman(schedule, { use24HourTimeFormat: true })}
-          </HumanText>
+          <HumanText>{this.makeHuman(schedule)}</HumanText>
         </HumanTextWrapper>
       </Wrapper>
     );
   }
 }
-
-export default Input;

@@ -1,5 +1,7 @@
 import { fork, all } from "redux-saga/effects";
 
+import { CronExpressionSagas } from "../../adapters";
+
 export default function* watch() {
-  return null;
+  yield all([fork(CronExpressionSagas)]);
 }

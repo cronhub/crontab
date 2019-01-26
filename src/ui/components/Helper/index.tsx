@@ -45,84 +45,58 @@ const HelperText = styled.div`
   padding-top: 10px;
 `;
 
-const cronExpressions = [
-  {
-    expression: "* * * * *",
-    schedule: "Every minute"
-  },
-  {
-    expression: "0 * * * *",
-    schedule: "Every hour"
-  },
-  {
-    expression: "0 0 * * *	",
-    schedule: "Every day at 12:00 AM"
-  },
-  {
-    expression: "0 0 * * FRI",
-    schedule: "At 12:00 AM, only on Friday"
-  },
-  {
-    expression: "0 0 1 * *",
-    schedule: "At 12:00 AM, on day 1 of the month"
-  }
-];
-
-const helpers = [
-  "minute (0-59)",
-  "hour (0 - 23)",
-  "day of the month (1 - 31)",
-  "month (1 - 12)",
-  "day of the week (0 - 6)"
-];
-
-class Input extends React.Component {
-  render() {
-    return (
-      <Wrapper>
-        <HelperText>
-          The cron expression is made of five fields. Each field can have the
-          following values.
-        </HelperText>
-        <HelpTable>
-          <thead>
-            <tr>
-              <th>*</th>
-              <th>*</th>
-              <th>*</th>
-              <th>*</th>
-              <th>*</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              {helpers.map(helper => (
-                <td>{helper}</td>
-              ))}
-            </tr>
-          </tbody>
-        </HelpTable>
-        <br />
-        <HelperText>Here are some example for you.</HelperText>
-        <HelpTable>
-          <thead>
-            <tr>
-              <th>Cron expression</th>
-              <th>Schedule</th>
-            </tr>
-          </thead>
-          <tbody>
-            {cronExpressions.map(row => (
-              <tr>
-                <td>{row.expression}</td>
-                <td>{row.schedule}</td>
-              </tr>
-            ))}
-          </tbody>
-        </HelpTable>
-      </Wrapper>
-    );
-  }
+interface CronExpression {
+  expression: string;
+  schedule: string;
 }
 
-export default Input;
+const Helper = ({
+  cronExpressions,
+  helpers
+}: {
+  cronExpressions: Array<CronExpression>;
+  helpers: Array<string>;
+}) => (
+  <Wrapper>
+    <HelperText>
+      The cron expression is made of five fields. Each field can have the
+      following values.
+    </HelperText>
+    <HelpTable>
+      <thead>
+        <tr>
+          {helpers.map(() => (
+            <th>*</th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          {helpers.map((helper: string) => (
+            <td>{helper}</td>
+          ))}
+        </tr>
+      </tbody>
+    </HelpTable>
+    <br />
+    <HelperText>Here are some example for you.</HelperText>
+    <HelpTable>
+      <thead>
+        <tr>
+          <th>Cron expression</th>
+          <th>Schedule</th>
+        </tr>
+      </thead>
+      <tbody>
+        {cronExpressions.map((row: CronExpression) => (
+          <tr>
+            <td>{row.expression}</td>
+            <td>{row.schedule}</td>
+          </tr>
+        ))}
+      </tbody>
+    </HelpTable>
+  </Wrapper>
+);
+
+export default Helper;

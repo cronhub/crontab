@@ -18,7 +18,7 @@ export const configureStore = () => {
     )
   ) as any);
 
-  //sagaMiddleware.run(sagas);
+  sagaMiddleware.run(sagas);
 
   return { store, history };
 };

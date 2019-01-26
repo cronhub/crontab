@@ -45,6 +45,29 @@ const HelperText = styled.div`
   padding-top: 10px;
 `;
 
+const cronExpressions = [
+  {
+    expression: "* * * * *",
+    schedule: "Every minute"
+  },
+  {
+    expression: "0 * * * *",
+    schedule: "Every hour"
+  },
+  {
+    expression: "0 0 * * *	",
+    schedule: "Every day at 12:00 AM"
+  },
+  {
+    expression: "0 0 * * FRI",
+    schedule: "At 12:00 AM, only on Friday"
+  },
+  {
+    expression: "0 0 1 * *",
+    schedule: "At 12:00 AM, on day 1 of the month"
+  }
+];
+
 class Input extends React.Component {
   render() {
     return (
@@ -83,26 +106,12 @@ class Input extends React.Component {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>* * * * *</td>
-              <td>Every minute</td>
-            </tr>
-            <tr>
-              <td>0 * * * *</td>
-              <td>Every hour</td>
-            </tr>
-            <tr>
-              <td>0 0 * * *</td>
-              <td>Every day at 12:00 AM</td>
-            </tr>
-            <tr>
-              <td>0 0 * * FRI</td>
-              <td>At 12:00 AM, only on Friday</td>
-            </tr>
-            <tr>
-              <td>0 0 1 * *</td>
-              <td>At 12:00 AM, on day 1 of the month</td>
-            </tr>
+            {cronExpressions.map(row => (
+              <tr>
+                <td>{row.expression}</td>
+                <td>{row.schedule}</td>
+              </tr>
+            ))}
           </tbody>
         </HelpTable>
       </Wrapper>

@@ -43,7 +43,7 @@ const Wrapper = styled.div`
   display: flex;
   width: 100%;
   justify-content: center;
-  align-items: center;
+  align-items: baseline;
   flex-direction: row;
   background: #fff;
   border: 1px solid #e9e4f7;

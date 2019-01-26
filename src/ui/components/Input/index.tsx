@@ -45,7 +45,7 @@ interface InputState {
   value: string;
 }
 
-export default class Input extends React.Component<null, InputState> {
+export default class Input extends React.Component<{}, InputState> {
   _input: any;
   constructor(props: any) {
     super(props);

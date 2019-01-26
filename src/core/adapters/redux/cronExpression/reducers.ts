@@ -5,7 +5,7 @@ import {
 } from "./actions";
 
 const humanExpression = (
-  state: string = "Default",
+  state: string = "",
   action: GetCronHumanExpressionSuccessActionType
 ) => {
   switch (action.type) {

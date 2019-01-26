@@ -73,10 +73,11 @@ export default class Home extends Component<
     const {
       focusOnCronExpressionInput,
       getCronHumanExpression,
-      cronExpressionValue
+      initialValues: { cronExpression }
     } = this.props;
     focusOnCronExpressionInput();
-    getCronHumanExpression(cronExpressionValue);
+    console.log(this.props);
+    getCronHumanExpression(cronExpression);
   }
 
   render() {

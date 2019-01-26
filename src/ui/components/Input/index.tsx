@@ -12,6 +12,11 @@ const InputWrapper = styled.input`
   background-color: #382b5f;
 `;
 
-const Input = ({ ...rest }) => <InputWrapper {...rest} />;
+const Input = ({ input, label, type, meta: { touched, error } }: any) => (
+  <div>
+    <InputWrapper {...input} placeholder={label} type={type} />
+    {touched && error && <span>{error}</span>}
+  </div>
+);
 
 export default Input;

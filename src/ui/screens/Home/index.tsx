@@ -91,7 +91,7 @@ export default class Home extends Component<
         <Wrapper>
           <Field
             name="cronExpression"
-            component="input"
+            component={Input}
             type="text"
             autoFocus
             onChange={event =>

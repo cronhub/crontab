@@ -57,7 +57,6 @@ const Wrapper = styled.div`
 
 interface HomeProps {
   getHumanReadableDescription: Function;
-  focusOnCronExpressionInput: Function;
 }
 
 interface CronConfigFormValues {
@@ -69,11 +68,9 @@ export default class Home extends Component<
 > {
   componentDidMount() {
     const {
-      focusOnCronExpressionInput,
       getHumanReadableDescription,
       initialValues: { cronExpression }
     } = this.props;
-    focusOnCronExpressionInput();
     getHumanReadableDescription(cronExpression);
   }
 

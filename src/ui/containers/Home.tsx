@@ -24,8 +24,6 @@ const mapStateToProps = (state: State) => ({
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   getHumanReadableDescription: (schedule: string) =>
     dispatch(getHumanReadableDescription(schedule)),
-  focusOnCronExpressionInput: () =>
-    dispatch(focus("CronConfigForm", "cronExpression"))
 });
 
 const validate = (values: CronConfigFormValues) => ({
@@ -33,7 +31,7 @@ const validate = (values: CronConfigFormValues) => ({
 });
 
 const DecoratedHomeForm = reduxForm({
-  form: "CronConfigForm",
+  form: "CronScheduleForm",
   destroyOnUnmount: false,
   validate,
   initialValues: {

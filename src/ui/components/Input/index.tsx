@@ -25,9 +25,22 @@ const ErrorText = styled.span`
   font-size: 0.75rem;
 `;
 
-const Input = ({ input, label, type, meta: { active, error } }: any) => (
+const Input = ({
+  input,
+  label,
+  type,
+  meta: { active, error },
+  ...rest
+}: any) => (
   <InputWrapper>
-    <InputElement error active {...input} placeholder={label} type={type} />
+    <InputElement
+      error
+      active
+      {...input}
+      placeholder={label}
+      type={type}
+      {...rest}
+    />
     <ErrorWrapper>
       {active && error && <ErrorText>{error}</ErrorText>}
     </ErrorWrapper>

@@ -65,15 +65,15 @@ const Helper = ({
     <HelpTable>
       <thead>
         <tr>
-          {helpers.map(() => (
-            <th>*</th>
+          {helpers.map((helper: string, index: number) => (
+            <th key={index}>*</th>
           ))}
         </tr>
       </thead>
       <tbody>
         <tr>
-          {helpers.map((helper: string) => (
-            <td>{helper}</td>
+          {helpers.map((helper: string, index: number) => (
+            <td key={index}>{helper}</td>
           ))}
         </tr>
       </tbody>
@@ -88,8 +88,8 @@ const Helper = ({
         </tr>
       </thead>
       <tbody>
-        {cronExpressions.map((row: CronExpression) => (
-          <tr>
+        {cronExpressions.map((row: CronExpression, index: number) => (
+          <tr key={index}>
             <td>{row.expression}</td>
             <td>{row.schedule}</td>
           </tr>

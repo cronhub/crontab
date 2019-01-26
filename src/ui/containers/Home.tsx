@@ -5,7 +5,7 @@ import { Dispatch } from "redux";
 import { Home } from "../screens";
 import { isRequired } from "../../utils";
 
-import { getCronHumanExpression } from "../../core/adapters";
+import { getHumanReadableDescription } from "../../core/adapters";
 
 interface State {
   cronExpression: {
@@ -22,8 +22,8 @@ const mapStateToProps = (state: State) => ({
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  getCronHumanExpression: (schedule: string) =>
-    dispatch(getCronHumanExpression(schedule)),
+  getHumanReadableDescription: (schedule: string) =>
+    dispatch(getHumanReadableDescription(schedule)),
   focusOnCronExpressionInput: () =>
     dispatch(focus("CronConfigForm", "cronExpression"))
 });

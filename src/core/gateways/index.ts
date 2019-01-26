@@ -1,2 +1,2 @@
-export * from "./CronHumanExpression";
-export * from "./CronHumanExpressionGateway";
+export * from "./CronHumanDescription";
+export * from "./CronHumanDescriptionGateway";

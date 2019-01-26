@@ -3,11 +3,11 @@ import { connectRouter } from "connected-react-router";
 import { reducer as formReducer } from "redux-form";
 import { History } from "history";
 
-import { CronExpressionReducers } from "../../adapters";
+import { CronDescriptionReducers } from "../../adapters";
 
 export default (history: History) =>
   combineReducers({
     form: formReducer,
     router: connectRouter(history),
-    cronExpression: CronExpressionReducers
+    cronExpression: CronDescriptionReducers
   });

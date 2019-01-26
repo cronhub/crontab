@@ -56,7 +56,7 @@ const Wrapper = styled.div`
 `;
 
 interface HomeProps {
-  getCronHumanExpression: Function;
+  getHumanReadableDescription: Function;
   focusOnCronExpressionInput: Function;
 }
 
@@ -70,15 +70,15 @@ export default class Home extends Component<
   componentDidMount() {
     const {
       focusOnCronExpressionInput,
-      getCronHumanExpression,
+      getHumanReadableDescription,
       initialValues: { cronExpression }
     } = this.props;
     focusOnCronExpressionInput();
-    getCronHumanExpression(cronExpression);
+    getHumanReadableDescription(cronExpression);
   }
 
   render() {
-    const { getCronHumanExpression, humanExpression } = this.props;
+    const { getHumanReadableDescription, humanExpression } = this.props;
 
     return (
       <InnerContainer>
@@ -95,7 +95,7 @@ export default class Home extends Component<
             type="text"
             autoFocus
             onChange={event =>
-              getCronHumanExpression(event && event.target.value)
+              getHumanReadableDescription(event && event.target.value)
             }
           />
           <HumanTextWrapper>

@@ -4,7 +4,7 @@ import { Field, InjectedFormProps } from "redux-form";
 import { Input } from "../../components";
 import { HelperContainer } from "../../containers";
 
-export const InnerContainer = styled.div`
+export const InnerContainer = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,7 +14,7 @@ export const InnerContainer = styled.div`
   max-width: 768px;
 `;
 
-const ValuePropContainer = styled.div`
+const ValuePropContainer = styled.header`
   font-size: 25px;
   font-weight: bold;
   color: #382a5fa3;
@@ -38,8 +38,6 @@ const HumanTextWrapper = styled.div`
   align-items: center;
   font-family: monospace;
 `;
-
-const HumanText = styled.div``;
 
 const Wrapper = styled.div`
   display: flex;
@@ -76,7 +74,6 @@ export default class Home extends Component<
       initialValues: { cronExpression }
     } = this.props;
     focusOnCronExpressionInput();
-    console.log(this.props);
     getCronHumanExpression(cronExpression);
   }
 
@@ -102,7 +99,7 @@ export default class Home extends Component<
             }
           />
           <HumanTextWrapper>
-            <HumanText>{humanExpression}</HumanText>
+            <span>{humanExpression}</span>
           </HumanTextWrapper>
         </Wrapper>
 

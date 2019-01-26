@@ -10,15 +10,13 @@ const ContributeButton = styled.a`
   cursor: pointer;
 `;
 
-const Header = styled.header`
+const Nav = styled.nav`
   color: white;
   display: flex;
   align-items: center;
   width: 100%;
   justify-content: flex-end;
-`;
 
-const Nav = styled.nav`
   ul {
     list-style: none;
     display: flex;
@@ -34,21 +32,19 @@ const Nav = styled.nav`
 `;
 
 const Navbar = () => (
-  <Header>
-    <Nav>
-      <ul>
-        <li>
-          <ContributeButton
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://github.com/cronhub-app/crontab"
-          >
-            Contribute
-          </ContributeButton>
-        </li>
-      </ul>
-    </Nav>
-  </Header>
+  <Nav>
+    <ul>
+      <li>
+        <ContributeButton
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/cronhub-app/crontab"
+        >
+          Contribute
+        </ContributeButton>
+      </li>
+    </ul>
+  </Nav>
 );
 
 export default Navbar;

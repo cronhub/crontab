@@ -1,19 +1,18 @@
-
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #F6F7F8;
+  background-color: #f6f7f8;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700');
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700");
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-
 *:focus {
-    outline: none;
+  outline: none;
 }

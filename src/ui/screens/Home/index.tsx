@@ -81,7 +81,7 @@ export default class Home extends Component<
       <InnerContainer>
         <ValuePropContainer>
           Cron expression generator by{" "}
-          <a href="https://cronhub.io?ref=crontab" rel="nofollow" title="">
+          <a href="https://cronhub.io" title="">
             Cronhub
           </a>
         </ValuePropContainer>

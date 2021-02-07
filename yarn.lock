@@ -3850,10 +3850,10 @@ create-react-class@^15.6.2:
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
 
-cronstrue@^1.60.0:
-  version "1.60.0"
-  resolved "https://registry.yarnpkg.com/cronstrue/-/cronstrue-1.60.0.tgz#c0824e7d418133ec30884aa1c41c00d28ff50247"
-  integrity sha512-z7RC3EbqjIGxp4sradkO7PCiEO+MZnQ4R5earvWb7bnyfhw+71EZlRBIyZUyMB0DoBGteg24zh7tElV9xM7YwA==
+cronstrue@^1.98.0:
+  version "1.108.0"
+  resolved "https://registry.yarnpkg.com/cronstrue/-/cronstrue-1.108.0.tgz#67a2a877fca1f0ece6d880faf6fd12a6a603a855"
+  integrity sha512-rNu97e/WRBUuHoVsPuWloq7zvT+B8/8h5NLBQkhOYdsrQEPHfsXgvoitoNyLHVyrcRX5vLl6gA45gEmVCdDuXg==
 
 cross-spawn@6.0.5, cross-spawn@^6.0.0, cross-spawn@^6.0.5:
   version "6.0.5"

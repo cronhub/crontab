@@ -38,11 +38,12 @@ const Navbar = () => (
         <ContributeButton
           target="_blank"
           rel="noopener noreferrer"
-          href="https://github.com/cronhub-app/crontab"
+          href="https://github.com/cronhub/crontab"
         >
           Contribute
         </ContributeButton>
       </li>
+      <li></li>
     </ul>
   </Nav>
 );

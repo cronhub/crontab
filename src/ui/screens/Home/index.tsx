@@ -17,14 +17,14 @@ export const InnerContainer = styled.section`
 const ValuePropContainer = styled.header`
   font-size: 25px;
   font-weight: bold;
-  color: #382a5fa3;
+  color: #5e4996;
   margin-top: 20px;
-  font-family: "Source Code Pro", monospace;
   margin-bottom: 40px;
+  text-align: center;
 
   a {
     font-family: "Source Code Pro", monospace;
-    color: #382b5f;
+    color: #382a5f;
   }
 `;
 
@@ -81,9 +81,9 @@ export default class Home extends Component<
       <InnerContainer>
         <ValuePropContainer>
           Cron expression generator by{" "}
-          <a href="https://cronhub.io" title="">
+          <a href="https://cronhub.io?utm_source=crontab&utm_medium=referral&utm_campaign=sideproject-campaign" title="crontab">
             Cronhub
-          </a>
+          </a>. Schedule and monitor jobs without any infra work.
         </ValuePropContainer>
         <Wrapper>
           <Field

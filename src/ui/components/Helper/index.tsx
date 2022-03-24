@@ -79,7 +79,7 @@ const Helper = ({
       </tbody>
     </HelpTable>
     <br />
-    <HelperText>Here are some example for you.</HelperText>
+    <HelperText>Here are some examples for you.</HelperText>
     <HelpTable>
       <thead>
         <tr>

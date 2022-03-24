@@ -14,7 +14,7 @@ export const InnerContainer = styled.section`
   max-width: 768px;
 `;
 
-const ValuePropContainer = styled.header`
+const ValuePropContainer = styled.h1`
   font-size: 25px;
   font-weight: bold;
   color: #5e4996;

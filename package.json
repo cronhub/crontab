@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "cronstrue": "^1.98.0",
-    "moment": "^2.23.0",
+    "moment": "^2.29.4",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-router-dom": "^4.3.1",
